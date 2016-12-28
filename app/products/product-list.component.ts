@@ -2,8 +2,9 @@ import {Component,OnInit} from '@angular/core';
 import {IProduct} from './product';
 @Component({
     selector:'pm-products',
-    templateUrl:'app/products/product-list.html',
-    styleUrls:['app/products/product-list.component.css']
+    moduleId:module.id, //relative paths with moduleId, where templateUrl/styleUrls get app/products automatically
+    templateUrl:'product-list.html',
+    styleUrls:['product-list.component.css']
 })
 
 export class ProductListComponent implements OnInit{
@@ -38,5 +39,8 @@ export class ProductListComponent implements OnInit{
     }
     ngOnInit():void{
         console.log('Initialised');
+    }
+    onRatingClicked(message:string):void{
+        this.pageTitle='Product List'+message;
     }
 }
