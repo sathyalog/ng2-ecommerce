@@ -15,6 +15,7 @@ var ProductListComponent = (function () {
         this.imageWidth = 40;
         this.imageMargin = 2;
         this.showImage = false;
+        this.listFilter = 'cart';
         this.products = [
             {
                 "productId": 2,
@@ -46,7 +47,8 @@ var ProductListComponent = (function () {
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.html'
+        templateUrl: 'app/products/product-list.html',
+        styleUrls: ['app/products/product-list.component.css']
     }),
     __metadata("design:paramtypes", [])
 ], ProductListComponent);
