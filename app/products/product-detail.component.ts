@@ -1,22 +1,48 @@
-import {Component,OnInit} from '@angular/core';
-import {IProduct} from './product';
-import { ActivatedRoute, Router } from '@angular/router'; // to get the parameter from the URL we use this
-@Component({
-    moduleId: module.id,
-    templateUrl:'product-detail.component.html'
-})
-export class ProductDetailComponent implements OnInit{
-    pageTitle:string = 'Product Detail';
-    product: IProduct;
-    constructor(private _route:ActivatedRoute, private _router:Router){
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
+import { Subscription }       from 'rxjs/Subscription';
+
+import { IProduct } from './product';
+import { ProductService } from './product.service';
+
+@Component({
+    templateUrl: 'app/products/product-detail.component.html'
+})
+export class ProductDetailComponent implements OnInit, OnDestroy {
+    pageTitle: string = 'Product Detail';
+    product: IProduct;
+    errorMessage: string;
+    private sub: Subscription;
+
+    constructor(private _route: ActivatedRoute,
+                private _router: Router,
+                private _productService: ProductService) {
     }
-    ngOnInit():void{
-        let id = +this._route.snapshot.params['id']; //to read the parameter(id) from url using snapshot. Because the parameter is provided as string, we will
-        // add a + at the beginning. + is a javascript shortcut to convert parameter string to numeric id
-        this.pageTitle+=`:${id}`;
+
+    ngOnInit(): void {
+        this.sub = this._route.params.subscribe(
+            params => {
+                let id = +params['id']; // add a + at the beginning. + is a javascript shortcut to convert parameter string to numeric id
+                this.getProduct(id);
+        });
     }
-    onBack():void{
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
+
+    getProduct(id: number) {
+        this._productService.getProduct(id).subscribe(
+            product => this.product = product,
+            error => this.errorMessage = <any>error);
+    }
+
+    onBack(): void {
         this._router.navigate(['/products']);
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product Detail: ' + message;
     }
 }

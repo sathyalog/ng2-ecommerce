@@ -25,19 +25,9 @@ export class ProductService{
         console.error(error);
         return Observable.throw(error.json().error || 'server error');
     }
-    // private checkIds(data){
-    //     console.log(data.length);
-    //     var Ids = [];
-    //     for(var i=0;i<data.length;i++){
-    //         Ids.push(data[i].productId);
-    //         console.log(Ids);
-    //     }
-    // }
-    // getIds():Observable<IProduct[]>{
-    //     return this._http.get(this._productUrl)
-    //             .map((response:Response)=><IProduct[]>response.json())
-    //             //.do(data=>console.log('All:'+JSON.stringify(data)))
-    //             .do(this.checkIds)
-    //             .catch(this.handleError);
-    // }
+    getProduct(id: number): Observable<IProduct> {
+        return this.getProducts()
+            .map((products: IProduct[]) => products.find(p => p.productId === id));
+    }
+    
 }
