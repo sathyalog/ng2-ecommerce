@@ -1,4 +1,4 @@
-<div class='panel panel-primary'>
+<div class='panel panel-default'>
     <div class='panel-heading'>
         {{pageTitle}}
     </div>
@@ -6,10 +6,20 @@
     <!-- Filter the Products   -->
     <div class='panel-body'>
         <div class='row'>
-            <div class='col-md-2'>Filter by:</div>
+            <!--<div class='col-md-2'>Filter by:</div>
+            
             <div class='col-md-4'>
                 <input type='text' [(ngModel)]='listFilter'/>
-            </div>
+            </div>-->
+            <div class="input-group col-md-3 search-margin">
+            
+               
+                <!--<span class="input-group-btn">
+                <button class="btn btn-default" type="button">Search!</button>
+                </span>-->
+            <input type="text" class="form-control" [(ngModel)]='listFilter' placeholder="Search for...">
+           
+            </div><!-- /input-group -->
         </div>
         <div class='row' >
             <div class='col-md-6'>

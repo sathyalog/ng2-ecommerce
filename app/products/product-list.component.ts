@@ -1,6 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {IProduct} from './product';
-import {ProductService} from './product.service'
+import {ProductService} from './product.service';
 @Component({
     moduleId:module.id, //relative paths with moduleId, where templateUrl/styleUrls get app/products automatically
     templateUrl:'product-list.html',
