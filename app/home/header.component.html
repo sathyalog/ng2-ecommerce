@@ -6,8 +6,8 @@
                     <li><a [routerLink]="['/products']">Product List</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a  *ngIf="!authenticated()" [routerLink]="['/products']" (click)="login()">Login</a></li>
-                    <li><a  *ngIf="authenticated()"  [routerLink]="['/welcome']" (click)="logout()">Logout</a></li>
+                    <li><a  *ngIf="!authenticated()" [routerLink]="['']" (click)="login()">Login/Signup</a></li>
+                    <li><a  *ngIf="authenticated()"  [routerLink]="['']" (click)="logout()">Logout</a></li>
                 </ul>
             </div>
         </nav>

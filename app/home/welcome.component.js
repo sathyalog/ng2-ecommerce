@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var auth_service_1 = require("./../auth/auth.service");
 var WelcomeComponent = (function () {
-    function WelcomeComponent() {
+    function WelcomeComponent(auth) {
+        this.auth = auth;
         this.pageTitle = 'Welcome';
     }
     return WelcomeComponent;
@@ -18,9 +20,10 @@ var WelcomeComponent = (function () {
 WelcomeComponent = __decorate([
     core_1.Component({
         templateUrl: 'app/home/welcome.component.html',
-        styles: ['.align-center { text-align: center; }']
+        styleUrls: ['app/home/welcome.component.css'],
+        providers: [auth_service_1.Auth]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [auth_service_1.Auth])
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
 //# sourceMappingURL=welcome.component.js.map
