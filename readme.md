@@ -1,9 +1,11 @@
-##ng2-ecommerce
+#ng2-ecommerce
 
 An e-commerce portal with Product Listing Page, Product Detail Page etc developed using angular2.
 
-#Auth0
+##Auth0
 Authentication being implemented by Auth0. Also SingleSignOn implemented.
+
+##How to Run this application??
 
 1) Open a command prompt in the project's root directory.
 
