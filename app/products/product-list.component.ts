@@ -9,8 +9,9 @@ import {ProductService} from './product.service';
 
 export class ProductListComponent implements OnInit{
     pageTitle:string='Product List';
-    imageWidth:number = 40;
-    imageMargin:number = 2;
+    imageWidth:number = 200;
+    imageHeight:number= 130;
+    imageMargin:number = 0;
     showImage:boolean=false;
     listFilter:string;
     products:IProduct[];

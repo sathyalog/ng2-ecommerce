@@ -3,10 +3,10 @@
             <a class='navbar-brand'>{{pageTitle}}</a>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/welcome']">Home</a></li>
-                    <li><a [routerLink]="['/products']">Product List</a></li>
+                    <li><a [routerLink]="['/products']">Products</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-
+                   
                     <li><a  *ngIf="!authenticated()" [routerLink]="['']" (click)="login()">Signup</a></li>
                      <li><a  *ngIf="authenticated()"  class="small" [routerLink]="['/profile']" >My Account</a></li>
                     <li><a  *ngIf="authenticated()"  [routerLink]="['']" (click)="logout()">Logout</a></li>
