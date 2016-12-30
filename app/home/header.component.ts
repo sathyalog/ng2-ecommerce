@@ -4,7 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 declare var Auth0Lock: any;
 @Component({
     selector:'header',
-    templateUrl: 'app/home/header.component.html'
+    templateUrl: 'app/home/header.component.html',
+    styles:['.small{font-size:15px;}']
 })
 export class HeaderComponent {
     public pageTitle: string = 'Product Management';
@@ -13,7 +14,8 @@ export class HeaderComponent {
     constructor(private _route: ActivatedRoute,
                 private _router: Router) {
     // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult) => {
+    this.lock.on("authenticated", (authResult,profile) => {
+        console.log(profile);
       localStorage.setItem('id_token', authResult.idToken);
     });
     }
@@ -48,6 +50,7 @@ export class HeaderComponent {
     public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+    //localStorage.removeItem('profile');
     }
 
 }

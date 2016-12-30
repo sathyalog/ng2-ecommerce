@@ -8,7 +8,15 @@ import { Auth } from './../auth/auth.service';
 })
 export class WelcomeComponent {
     public pageTitle: string = 'Welcome';
-    constructor(private auth: Auth) {}
-
+    showLoginForm: boolean;
+    constructor(private auth: Auth) {
+        
+        if(localStorage.getItem('id_token')){
+            this.showLoginForm = false;
+        }else{
+            this.showLoginForm = true;
+        }
+    }
+    
     
 }

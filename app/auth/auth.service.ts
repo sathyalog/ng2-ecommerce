@@ -15,10 +15,10 @@ export class Auth {
     callbackOnLocationHash: true,
     callbackURL: myConfig.callbackURL,
   });
-
+ 
   constructor(private router: Router) {
     var result = this.auth0.parseHash(window.location.hash);
-
+    
     if (result && result.idToken) {
       localStorage.setItem('id_token', result.idToken);
       this.router.navigate(['/products']);

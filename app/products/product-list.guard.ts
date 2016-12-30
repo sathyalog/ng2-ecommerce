@@ -6,8 +6,5 @@ export class ProductListGuard implements CanActivate {
       if (tokenNotExpired()) {
         return true;
        }
-    //else{
-    //       alert("Please login to view products");
-    //   }
     }
 }
