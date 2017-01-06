@@ -12,19 +12,30 @@ export class ProductDetailGuard implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot): boolean {
-        let id = +route.url[1].path;
-        // this._productService.getIds()
-        //                     .subscribe(products => this.products = products,
-        //                     error => this.errorMessage = <any>error);
-        if (isNaN(id) || id < 1) {
+        //let id = +route.url[1].path;
+         let id = route.url[1].path;
+       if (typeof id === "number") {
+           if (isNaN(id) || id < 1) {
             alert('Invalid product Id');
             // start a new navigation to redirect to list page
             this._router.navigate(['/products']);
             // abort current navigation
             return false;
         };
-         
+        console.log("product as number");
+        } else {
+            if(name===null){
+             alert('Invalid product Name');
+            // start a new navigation to redirect to list page
+            this._router.navigate(['/products']);
+            // abort current navigation
+            return false;
+        };
+        console.log("product as name");
+        }
         return true;
     }
+
+    
     
 }

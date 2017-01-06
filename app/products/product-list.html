@@ -22,7 +22,10 @@
                 <img [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.height.px]='imageHeight'
                     [style.margin.px]='imageMargin' />
                 <div class="row product-details">
-                    <div class="brandname"><a class="brandname" [routerLink]="['/product',product.productId]">
+                    <!--  get product id in URL of PDP page -->
+                     <div class="brandname"><a class="brandname" [routerLink]="['/product',product.productId]">
+                     <!--  get product name in URL of PDP page -->
+                    <!--<div class="brandname"><a class="brandname" [routerLink]="['/product',product.productName]">-->
                                     {{product.productName}}
                                 </a></div>
                     <div class="branddesc">{{product.description}}</div>

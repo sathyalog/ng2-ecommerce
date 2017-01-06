@@ -29,5 +29,9 @@ export class ProductService{
         return this.getProducts()
             .map((products: IProduct[]) => products.find(p => p.productId === id));
     }
+    getProductName(name: string): Observable<IProduct> {
+        return this.getProducts()
+            .map((products: IProduct[]) => products.find(p => p.productName === name));
+    }
     
 }

@@ -21,8 +21,9 @@ import { AUTH_PROVIDERS }      from 'angular2-jwt';
   imports: [ BrowserModule, FormsModule, HttpModule, 
             RouterModule.forRoot([
               { path: 'products', component: ProductListComponent,canActivate: [ProductListGuard] },
-              { path: 'product/:id', 
-                  canActivate:[ProductDetailGuard],
+              { path: 'product/:id', // get product id in URL of PDP page */
+              //{ path: 'product/:name', // get product name in URL of PDP page */
+                  //canActivate:[ProductDetailGuard],
                   component: ProductDetailComponent },
               { path: 'profile', component: ProfileComponent },
               { path: 'welcome', component: WelcomeComponent },
