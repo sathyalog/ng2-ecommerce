@@ -8,7 +8,7 @@ import {ProductService} from './products/product.service';
         <div>
         <header></header>
         <div class='container'>
-            <router-outlet></router-outlet>
+            <router-outlet></router-outlet> 
         </div>
      </div>  
     `,
@@ -17,9 +17,6 @@ import {ProductService} from './products/product.service';
 })
 export class AppComponent { 
     pageTitle: string = 'Product Management'
-
-   
-
     /* unnecessary code
     <a class='navbar-brand logo-dimensions'><img alt="Brand" style="width:25px;vertical-align: middle; display: inline-block;
     height: 100%;" src="./app/assets/images/sapient-logo.jpg"></a>

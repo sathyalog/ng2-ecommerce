@@ -1,4 +1,5 @@
-<div class='panel panel-default' *ngIf='product'>
+<show-cart></show-cart>
+<div class='panel panel-default' *ngIf='product'> 
     <div class='panel-heading' style='font-size:large'>
         {{pageTitle + ': ' + product.productName}}
     </div>
@@ -49,6 +50,9 @@
     <div class='panel-footer'>
         <a class='btn btn-default' (click)='onBack()' style='width:80px'>
             <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        <a class='btn btn-default'  (click)='addToCart()'  style='width:120px'>
+            <i class='glyphicon glyphicon-shopping-cart'></i> Add to Cart
         </a>
     </div>
 </div>

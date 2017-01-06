@@ -45,4 +45,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product Detail: ' + message;
     }
+
+    addToCart(){
+        
+        alert("You added");
+    }
 }
