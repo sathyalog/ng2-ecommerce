@@ -33,6 +33,7 @@
         main: './main.js',
         defaultExtension: 'js'
       },
+      server:'server.js',
       rxjs: {
         defaultExtension: 'js'
       }

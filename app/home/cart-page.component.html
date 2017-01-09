@@ -1,1 +1,44 @@
 This is cart page.
+
+ <ul class="row ">
+            <li class="col-md-9 col-xs-12 col-lg-8" *ngFor='let cartdetails of cart'>
+                <div class='panel-body'>
+        <div class='row table-border'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{cartdetails.productName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Code:</div>
+                    <div class='col-md-6'>{{cartdetails.productCode}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{cartdetails.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Availability:</div>
+                    <div class='col-md-6'>{{cartdetails.stock}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Price:</div>
+                    <div class='col-md-6'>{{cartdetails.price|currency:'USD':true}}</div>
+                </div>
+                
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                     [style.width.px]='200' 
+                     [style.margin.px]='2' 
+                     [src]='cartdetails.imageUrl'
+                     [title]='cartdetails.productName'>
+            </div>
+            <button class='btn btn-default'>Remove</button>
+        </div>
+    </div>  
+    </li>
+ </ul>
+
+         

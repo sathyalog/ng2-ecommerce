@@ -1,0 +1,22 @@
+[
+    {
+        "productId": 1,
+        "productName": "Canon DSLR Camera",
+        "productCode": "GDN-0011",
+        "stock": "Coming Soon",
+        "description": "Canon DSLR Camera",
+        "price": 19.95,
+        "starRating": 3.2,
+        "imageUrl": "../../../app/assets/images/products/canon-pdp.jpeg"
+    },
+    {
+        "productId": 2,
+        "productName": "Dell Laptop",
+        "productCode": "GDN-0023",
+        "stock": "In-Stock",
+        "description": "15' inches Dell Laptop",
+        "price": 32.99,
+        "starRating": 4.2,
+        "imageUrl": "../../../app/assets/images/products/dell-pdp.jpeg"
+    }
+]

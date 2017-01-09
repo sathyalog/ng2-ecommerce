@@ -1,0 +1,10 @@
+ul li{
+    list-style-type: none;
+    font-size: 14px;
+}
+
+div.table-border{
+    border:1px solid;
+    border-radius: 4px;
+    padding:25px
+}

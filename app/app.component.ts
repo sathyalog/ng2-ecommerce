@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ProductService} from './products/product.service';
-
+import {CartService} from './home/cart.service';
 
 @Component({
     selector: 'pm-app',
