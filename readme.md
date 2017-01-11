@@ -16,6 +16,13 @@ Authentication being implemented by Auth0. Also SingleSignOn implemented.
     This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
     It also starts the lite-server and launches the browser to run the application.
 
+Please install json-server and run in port 3004.Run the following in terminal/command prompt.
+
+json-server --watch api/cart/cart.json --port 3004
+json-server --watch api/products/products.json --port 3005
+(or)
+json-server --watch api/db.js --port 3004
+
 ##To display product id/name in URL of PDP page:
 
 search with "get product id in URL of PDP page" (or) "get product name in URL of PDP page"s in following pages and comment un-necessary one(id/name).

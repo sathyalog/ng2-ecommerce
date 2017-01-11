@@ -1,6 +1,6 @@
 This is cart page.
 
- <ul class="row ">
+ <ul class="row "*ngIf="cart" >
             <li class="col-md-9 col-xs-12 col-lg-8" *ngFor='let cartdetails of cart'>
                 <div class='panel-body'>
         <div class='row table-border'>
@@ -35,10 +35,11 @@ This is cart page.
                      [src]='cartdetails.imageUrl'
                      [title]='cartdetails.productName'>
             </div>
-            <button class='btn btn-default'>Remove</button>
+            <button (click)='deleteProduct(cartdetails.productId)' attr.data-id='{{cartdetails.productId}}' class='btn btn-default'>Remove</button>
         </div>
     </div>  
     </li>
  </ul>
+ <div *ngIf="!cart">No Products</div>
 
          

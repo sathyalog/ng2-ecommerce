@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,OnChanges} from '@angular/core';
 import {ICart} from './cart';
 import {CartService} from './cart.service';
 @Component({
@@ -18,11 +18,23 @@ export class CartPageComponent implements OnInit{
                             .subscribe(cart => this.cart = cart,
                             error => this.errorMessage = <any>error);
     }
-    addCart (id: number) {
-    if (!id) { return; }
-    this._cartService.addCart(id)
-                     .subscribe(
-                       cart  => this.cart.push(id),
-                       error =>  this.errorMessage = <any>error);
-  }
+    ngOnChanges():void{
+        this._cartService.getCart()
+                            .subscribe(cart => this.cart = cart,
+                            error => this.errorMessage = <any>error);
+    }
+    deleteProduct(id:number){
+        this._cartService.deleteFromCart(id)
+                            .subscribe(cart => this.cart = cart,
+                            error => this.errorMessage = <any>error);
+              
+    }
+    
+//     addCart (id: number) {
+//     if (!id) { return; }
+//     this._cartService.addCart(id)
+//                      .subscribe(
+//                        cart  => this.cart.push(id),
+//                        error =>  this.errorMessage = <any>error);
+//   }
 }

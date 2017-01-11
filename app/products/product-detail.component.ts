@@ -64,15 +64,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.pageTitle = 'Product Detail: ' + message;
     }
 
-    addToCart(){
-        // this.sub = this._route.params.subscribe(
-        //     params => {
-        //         let id = +params['id']; // add a + at the beginning. + is a javascript shortcut to convert parameter string to numeric id
-        //         this.getProduct(id);
-        //         this.getId =id;
-        // });
-         this.getId = 81;   
-            this._cartService.addCart(this.getId);
-        // alert("You added"+addVal);
+    addToCart(product){
+            this._cartService.addCart(product).subscribe(cart => this.cart = product,
+                            error => this.errorMessage = <any>error);     
     }
 }
