@@ -19,8 +19,11 @@ Authentication being implemented by Auth0. Also SingleSignOn implemented.
 Please install json-server and run in port 3004.Run the following in terminal/command prompt.
 
 json-server --watch api/cart/cart.json --port 3004
+
 json-server --watch api/products/products.json --port 3005
+
 (or)
+
 json-server --watch api/db.js --port 3004
 
 ##To display product id/name in URL of PDP page:

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,OnInit, OnChanges} from '@angular/core';
 import {CartService} from './../home/cart.service';
 @Component({
     selector:'show-cart',
@@ -8,12 +8,19 @@ import {CartService} from './../home/cart.service';
     providers: [CartService]
 })
 
-export class CartButtonComponent{
+export class CartButtonComponent implements OnInit,OnChanges{
     cartCount:number;
     constructor(private _cartService:CartService){
         this.getCount();
     }
     getCount(){
-        this.cartCount = this._cartService.count;
+        return this.cartCount = this._cartService.count;
     }
+    ngOnInit():void{
+        this.getCount();
+    }
+    ngOnChanges():void{
+        this.getCount();
+    }
+
 }

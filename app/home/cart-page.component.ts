@@ -10,12 +10,18 @@ import {CartService} from './cart.service';
 export class CartPageComponent implements OnInit{
     cart:ICart[];
     errorMessage:string;
+    cartAmount:number;
     constructor(private _cartService:CartService){
-        
+        this.cartAmount=0;
     }
     ngOnInit():void{
         this._cartService.getCart()
-                            .subscribe(cart => this.cart = cart,
+                            .subscribe(cart => {this.cart = cart;
+                                for (var item of cart) {
+                                    this.cartAmount = this.cartAmount+item.price;    
+                                }
+                                console.log(this.cartAmount);      
+                            },
                             error => this.errorMessage = <any>error);
     }
     ngOnChanges():void{
@@ -29,7 +35,6 @@ export class CartPageComponent implements OnInit{
                             error => this.errorMessage = <any>error);
               
     }
-    
 //     addCart (id: number) {
 //     if (!id) { return; }
 //     this._cartService.addCart(id)

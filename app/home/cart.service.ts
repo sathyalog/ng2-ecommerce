@@ -10,15 +10,13 @@ import {ICart} from './cart';
 @Injectable()
 export class CartService{
     private _cartUrl = 'http://127.0.0.1:3004/cartProducts';
-    count:number=1;
+    count:number;
     constructor(private _http:Http){
-        
+        this.count = 1;
     }
     
     addCart(product:Object): Observable<ICart[]> {
         let bodyString = JSON.stringify(product); // Stringify payload
-        //var headers = new Headers();
-        //headers.append('Content-Type', 'application/x-www-form-urlencoded');
         let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options = new RequestOptions({ headers: headers }); // Create a request option
 
@@ -47,6 +45,7 @@ export class CartService{
                     console.log('All:'+JSON.stringify(data))})
                  .catch(this.handleError); 
     }
+
     private handleError(error:Response){
         console.log(error);
         return Observable.throw(error.json().error || 'server error');

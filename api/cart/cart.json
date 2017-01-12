@@ -10,6 +10,28 @@
       "price": 19.95,
       "starRating": 3.2,
       "imageUrl": "../../../app/assets/images/products/canon-pdp.jpeg"
+    },
+    {
+      "id": 81,
+      "productId": 81,
+      "productName": "Samsung Curved TV",
+      "productCode": "TBX-0022",
+      "stock": "Available",
+      "description": "15-inch curved FullHD and Smart TV",
+      "price": 11.55,
+      "starRating": 3.7,
+      "imageUrl": "../../../app/assets/images/products/samsung-tv-pdp.jpeg"
+    },
+    {
+      "id": 10,
+      "productId": 10,
+      "productName": "IFB Microwave Woven",
+      "productCode": "GMG-0042",
+      "stock": "Out Of Stock",
+      "description": "Ultra smart microwave woven",
+      "price": 35.95,
+      "starRating": 4.6,
+      "imageUrl": "../../../app/assets/images/products/ifb-plp.jpeg"
     }
   ]
 }
