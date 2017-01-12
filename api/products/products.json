@@ -57,12 +57,12 @@
     {
         "id":5,
         "productId": 5,
-        "productName": "Sony Headset",
+        "productName": "Sony Tablet 2-in-1",
         "productCode": "TBX-0048",
         "stock": "In-Stock",
-        "description": "Sony Headset",
-        "price": 8.9,
+        "description": "Sony latest new 2-in-1 tablet",
+        "price": 18.9,
         "starRating": 4.8,
-        "imageUrl": "../../../app/assets/images/products/sony-plp.jpeg"
+        "imageUrl": "../../../app/assets/images/products/iball-slide-2-in-1.jpeg"
     }
 ]
