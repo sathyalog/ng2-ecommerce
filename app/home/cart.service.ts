@@ -46,6 +46,18 @@ export class CartService{
                  .catch(this.handleError); 
     }
 
+    // clearCart():Observable<ICart[]>{
+    //     return this._http.get(this._cartUrl)
+    //             .map((response:Response)=><ICart[]>response.json())
+    //             .do(data=>{this.count = data.length;
+    //                for (var i=0;i<this.count;i++) {
+    //                    let id = data[i].id;
+    //                     this.deleteFromCart(id);
+    //                     }
+    //                 console.log('All:'+JSON.stringify(data))})
+    //             .catch(this.handleError);   
+    // }
+
     private handleError(error:Response){
         console.log(error);
         return Observable.throw(error.json().error || 'server error');

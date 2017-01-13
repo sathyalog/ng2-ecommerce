@@ -8,19 +8,13 @@ import {CartService} from './../home/cart.service';
     providers: [CartService]
 })
 
-export class CartButtonComponent implements OnInit,OnChanges{
+export class CartButtonComponent {
     cartCount:number;
-    constructor(private _cartService:CartService){
+    constructor(private _cartService:CartService){    
         this.getCount();
     }
     getCount(){
         return this.cartCount = this._cartService.count;
-    }
-    ngOnInit():void{
-        this.getCount();
-    }
-    ngOnChanges():void{
-        this.getCount();
     }
 
 }

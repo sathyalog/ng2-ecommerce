@@ -35,11 +35,9 @@ export class CartPageComponent implements OnInit{
                             error => this.errorMessage = <any>error);
               
     }
-//     addCart (id: number) {
-//     if (!id) { return; }
-//     this._cartService.addCart(id)
-//                      .subscribe(
-//                        cart  => this.cart.push(id),
-//                        error =>  this.errorMessage = <any>error);
-//   }
+    // removeAllProducts(){
+    //     this._cartService.clearCart()
+    //                     .subscribe(cart => this.cart = cart,
+    //                         error => this.errorMessage = <any>error);
+    // }
 }
