@@ -1,6 +1,5 @@
-import {IProduct} from './../products/product';
+import { IProduct } from './../products/product';
 
-export interface ICart extends IProduct{
-        
-       
+export interface ICart extends IProduct {
+
 }

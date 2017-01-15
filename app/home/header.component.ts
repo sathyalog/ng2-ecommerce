@@ -1,32 +1,34 @@
 import { Component } from '@angular/core';
-import {tokenNotExpired, JwtHelper} from 'angular2-jwt';
+import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import { Router, ActivatedRoute } from '@angular/router';
 declare var Auth0Lock: any;
 @Component({
-    selector:'header',
-    templateUrl: 'app/home/header.component.html',
-    styles:['.small{font-size:15px;}']
+  selector: 'header',
+  templateUrl: 'app/home/header.component.html',
+  styles: ['.small{font-size:15px;}']
 })
 export class HeaderComponent {
-    public pageTitle: string = 'Product Management';
-    lock = new Auth0Lock('xe58JBwAHV5D6C68MfCYFlLWdo7yVJcW', 'sathyalog.auth0.com', {});
-    
-    constructor(private _route: ActivatedRoute,
-                private _router: Router) {
+  public pageTitle: string = 'Product Management';
+  lock = new Auth0Lock('xe58JBwAHV5D6C68MfCYFlLWdo7yVJcW', 'sathyalog.auth0.com', {});
+
+  constructor(private _route: ActivatedRoute,
+              private _router: Router) {
     // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult,profile) => {
-        console.log(profile);
+    this.lock.on("authenticated", (authResult, profile) => {
+      console.log(profile);
       localStorage.setItem('id_token', authResult.idToken);
     });
-    }
-    jwtHelper: JwtHelper = new JwtHelper();
-    public authenticated() {
+  }
+
+  jwtHelper: JwtHelper = new JwtHelper();
+
+  public authenticated() {
     // Check if there's an unexpired JWT
     // This searches for an item in localStorage with key == 'id_token'
     return tokenNotExpired();
-    }
+  }
 
-    public login() {
+  public login() {
     // Call the show method to display the widget.
     this.lock.show();
     //var self = this;
@@ -45,12 +47,13 @@ export class HeaderComponent {
     //         );
     //         //self.authenticated();
     //     });
-        
-    }
-    public logout() {
+
+  }
+
+  public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
-    //localStorage.removeItem('profile');
-    }
+
+  }
 
 }

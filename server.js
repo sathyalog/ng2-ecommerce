@@ -5,8 +5,8 @@ import * as path from 'path';
 import * as express from 'express';
 
 // Angular 2 Universal
-import {provideRouter} from '@angular/router';
-import {enableProdMode} from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { enableProdMode } from '@angular/core';
 import {
   expressEngine,
   BASE_URL,
@@ -18,7 +18,7 @@ import {
 } from 'angular2-universal';
 
 // replace this line with your Angular 2 root component
-import {App, routes} from './app';
+import { App, routes } from './app';
 
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
@@ -34,18 +34,20 @@ function ngApp(req, res) {
   let baseUrl = '/';
   let url = req.originalUrl || '/';
 
-  let config: ExpressEngineConfig = {
-    directives: [ App ],
+  let config
+:
+  ExpressEngineConfig = {
+    directives: [App],
 
     // dependencies shared among all requests to server
     platformProviders: [
-      {provide: ORIGIN_URL, useValue: 'http://localhost:4000'},
-      {provide: BASE_URL, useValue: baseUrl},
+      { provide: ORIGIN_URL, useValue: 'http://localhost:4000' },
+      { provide: BASE_URL, useValue: baseUrl },
     ],
 
     // dependencies re-created for each request
     providers: [
-      {provide: REQUEST_URL, useValue: url},
+      { provide: REQUEST_URL, useValue: url },
       provideRouter(routes),
       NODE_LOCATION_PROVIDERS,
       NODE_HTTP_PROVIDERS,
@@ -63,7 +65,7 @@ function ngApp(req, res) {
 }
 
 // Serve static files
-app.use(express.static(ROOT, {index: false}));
+app.use(express.static(ROOT, { index: false }));
 
 // send all requests to Angular Universal
 // if you want Express to handle certain routes (ex. for an API) make sure you adjust this
@@ -72,6 +74,6 @@ app.get('/welcome', ngApp);
 app.get('/products', ngApp);
 
 // Server
-app.listen(4000, () => {
+app.listen(4000, () = > {
   console.log('Listening on: http://localhost:4000');
-});
+})

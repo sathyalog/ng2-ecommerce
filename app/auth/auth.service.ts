@@ -1,10 +1,10 @@
-import { Injectable }      from '@angular/core';
+import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { Router }          from '@angular/router';
-import { myConfig }        from './auth.config';
+import { Router } from '@angular/router';
+import { myConfig } from './auth.config';
 
 // Avoid name not found warnings
-declare var Auth0: any;
+declare const Auth0: any;
 
 @Injectable()
 export class Auth {
@@ -15,10 +15,10 @@ export class Auth {
     callbackOnLocationHash: true,
     callbackURL: myConfig.callbackURL,
   });
- 
+
   constructor(private router: Router) {
-    var result = this.auth0.parseHash(window.location.hash);
-    
+    const result = this.auth0.parseHash(window.location.hash);
+
     if (result && result.idToken) {
       localStorage.setItem('id_token', result.idToken);
       this.router.navigate(['/products']);
@@ -33,7 +33,7 @@ export class Auth {
       responseType: 'token',
       email: username,
       password: password,
-    }, function(err) {
+    }, function (err) {
       if (err) alert("something went wrong: " + err.message);
     });
   };
@@ -44,7 +44,7 @@ export class Auth {
       responseType: 'token',
       email: username,
       password: password,
-    }, function(err) {
+    }, function (err) {
       if (err) alert("something went wrong: " + err.message);
     });
   };
@@ -52,7 +52,7 @@ export class Auth {
   public googleLogin() {
     this.auth0.login({
       connection: 'google-oauth2'
-    }, function(err) {
+    }, function (err) {
       if (err) alert("something went wrong: " + err.message);
     });
   };
