@@ -18,4 +18,4 @@ server.use(jsonServer.defaults());
 // Returns an Express router
 var router = jsonServer.router(db);
 server.use(router);
-server.listen(3004);
+server.listen(3006);
