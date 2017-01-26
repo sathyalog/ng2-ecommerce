@@ -1,7 +1,11 @@
 {
-  "name": "angular-app-trial",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "product-management",
+  "version": "1.0.0",
+  "authors": {
+    "Sathya",
+    "Vish1988"
+  }
+  "description": "Package for the Product Management sample application",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
