@@ -1,31 +1,37 @@
-# AngularAppTrial
+#ng2-ecommerce
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+An e-commerce portal with Product Listing Page, Product Detail Page etc developed using angular2.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Auth0
+Authentication being implemented by Auth0. Also SingleSignOn implemented.
 
-## Code scaffolding
+##How to Run this application??
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+1) Open a command prompt in the project's root directory.
 
-## Build
+2) Type: `npm install`
+    This installs the dependencies as defined in the package.json file.
+    
+3) Type: `npm start`
+    This launches the TypeScript compiler (tsc) to compile the application and wait for changes. 
+    It also starts the lite-server and launches the browser to run the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Please install json-server and run in port 3004.Run the following in terminal/command prompt.
 
-## Running unit tests
+json-server --watch api/cart/cart.json --port 3004
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+json-server --watch api/products/products.json --port 3005
 
-## Running end-to-end tests
+(or)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+json-server --watch api/db.js --port 3004
 
-## Deploying to GitHub Pages
+##To display product id/name in URL of PDP page:
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+search with "get product id in URL of PDP page" (or) "get product name in URL of PDP page"s in following pages and comment un-necessary one(id/name).
 
-## Further help
+1. Comment/Uncomment respective id/name in app.module.ts
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+2. Comment/Uncomment respective id/name in product-list.html
+
+3. Comment/Uncomment respective id/name in product-detail.component.ts
