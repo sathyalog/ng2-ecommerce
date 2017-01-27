@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
-import { tokenNotExpired } from 'angular2-jwt';
+import { Component } from '@angular/core';
 
 @Component({
-    templateUrl:'../../assets/static/template/profile.component.html'
+  templateUrl: '../../assets/static/template/profile.component.html'
 })
 
-export class ProfileComponent{
-   profile:any;
-   constructor(){
-       //this.profile = JSON.parse(localStorage.getItem('profile'));
+export class ProfileComponent {
+  profile: any;
 
-   }
+  constructor() {
+    //this.profile = JSON.parse(localStorage.getItem('profile'));
+
+  }
 }

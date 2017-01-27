@@ -41,7 +41,7 @@ export class CartPageComponent implements OnInit {
 
   }
 
-  removeAllProducts(){
+  removeAllProducts() {
     this._cartService.clearCart()
       .subscribe(cart => this.cart = cart,
         error => this.errorMessage = <any>error);
